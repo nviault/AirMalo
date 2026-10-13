@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #000000;
+    --surface-card: #121214;
+    --surface-glass: rgba(28, 28, 30, 0.7);
+    --accent-primary: #0A84FF;
+    --text-primary: #F2F2F7;
+    --text-secondary: #8E8E93;
+    --alert-vip: #FF9F0A;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-mono-telemetry {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-sans-ui {
+  font-family: 'Outfit', sans-serif;
+}
+
+.glass-panel {
+  background: rgba(22, 22, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes vip-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 25px rgba(255, 159, 10, 0.4), inset 0 0 60px rgba(255, 159, 10, 0.2);
+  }
+  50% {
+    box-shadow: inset 0 0 50px rgba(255, 159, 10, 0.8), inset 0 0 100px rgba(255, 159, 10, 0.4);
+  }
+}
+
+.vip-active-border {
+  animation: vip-pulse 2s infinite ease-in-out;
+}
+
+@keyframes flight-glide {
+  0% {
+    transform: translateX(-15%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(15%);
+  }
+}
+
+.animate-flight-slow {
+  animation: flight-glide 20s ease-in-out infinite alternate;
+}
